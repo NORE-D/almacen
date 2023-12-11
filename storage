@@ -1,0 +1,8 @@
+#!/bin/bash
+
+total_space=$(df -h | awk '$NF=="/"{printf "%s\n", $2}')
+used_space=$(df -h | awk '$NF=="/"{printf "%s\n", $3}')
+free_space=$(df -h | awk '$NF=="/"{printf "%s\n", $4}')
+echo "Espacio total:   $total_space"
+echo "Espacio usado:   $used_space"
+echo "Espacio libre:   $free_space"
